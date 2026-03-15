@@ -1,0 +1,358 @@
+{
+  "_comment": "This is the storage layout that solc/Hardhat would produce for ExampleStorage. You can generate the real one with: solc --storage-layout ExampleStorageContract.sol or via Hardhat artifacts.",
+  "storage": [
+    {
+      "label": "owner",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_address",
+      "contract": "Owned"
+    },
+    {
+      "label": "initialized",
+      "offset": 20,
+      "slot": "0",
+      "type": "t_bool",
+      "contract": "Owned"
+    },
+    {
+      "label": "totalOrders",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "feeConfig",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_struct(FeeConfig)_storage",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "globalStatus",
+      "offset": 0,
+      "slot": "3",
+      "type": "t_enum(OrderStatus)",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "version",
+      "offset": 1,
+      "slot": "3",
+      "type": "t_uint8",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "maxOrdersPerUser",
+      "offset": 2,
+      "slot": "3",
+      "type": "t_uint16",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "feeRecipient",
+      "offset": 4,
+      "slot": "3",
+      "type": "t_address",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "description",
+      "offset": 0,
+      "slot": "4",
+      "type": "t_string_storage",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "orders",
+      "offset": 0,
+      "slot": "5",
+      "type": "t_mapping(t_uint256,t_struct(Order)_storage)",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "userProfiles",
+      "offset": 0,
+      "slot": "6",
+      "type": "t_mapping(t_address,t_struct(UserProfile)_storage)",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "orderHistory",
+      "offset": 0,
+      "slot": "7",
+      "type": "t_array(t_struct(Order)_storage)dyn_storage",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "allowances",
+      "offset": 0,
+      "slot": "8",
+      "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "balances",
+      "offset": 0,
+      "slot": "9",
+      "type": "t_mapping(t_address,t_uint256)",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "fixedPrices",
+      "offset": 0,
+      "slot": "10",
+      "type": "t_array(t_uint128)4_storage",
+      "contract": "ExampleStorage"
+    },
+    {
+      "label": "smallData",
+      "offset": 0,
+      "slot": "12",
+      "type": "t_bytes_storage",
+      "contract": "ExampleStorage"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_bool": {
+      "encoding": "inplace",
+      "label": "bool",
+      "numberOfBytes": "1"
+    },
+    "t_uint8": {
+      "encoding": "inplace",
+      "label": "uint8",
+      "numberOfBytes": "1"
+    },
+    "t_uint16": {
+      "encoding": "inplace",
+      "label": "uint16",
+      "numberOfBytes": "2"
+    },
+    "t_uint32": {
+      "encoding": "inplace",
+      "label": "uint32",
+      "numberOfBytes": "4"
+    },
+    "t_uint64": {
+      "encoding": "inplace",
+      "label": "uint64",
+      "numberOfBytes": "8"
+    },
+    "t_uint128": {
+      "encoding": "inplace",
+      "label": "uint128",
+      "numberOfBytes": "16"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    },
+    "t_int256": {
+      "encoding": "inplace",
+      "label": "int256",
+      "numberOfBytes": "32"
+    },
+    "t_bytes32": {
+      "encoding": "inplace",
+      "label": "bytes32",
+      "numberOfBytes": "32"
+    },
+    "t_enum(OrderStatus)": {
+      "encoding": "inplace",
+      "label": "enum ExampleStorage.OrderStatus",
+      "numberOfBytes": "1"
+    },
+    "t_enum(Side)": {
+      "encoding": "inplace",
+      "label": "enum ExampleStorage.Side",
+      "numberOfBytes": "1"
+    },
+    "t_string_storage": {
+      "encoding": "bytes",
+      "label": "string",
+      "numberOfBytes": "32"
+    },
+    "t_bytes_storage": {
+      "encoding": "bytes",
+      "label": "bytes",
+      "numberOfBytes": "32"
+    },
+    "t_struct(FeeConfig)_storage": {
+      "encoding": "inplace",
+      "label": "struct ExampleStorage.FeeConfig",
+      "numberOfBytes": "32",
+      "members": [
+        {
+          "label": "makerFee",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint64"
+        },
+        {
+          "label": "takerFee",
+          "offset": 8,
+          "slot": "0",
+          "type": "t_uint64"
+        },
+        {
+          "label": "rebateBps",
+          "offset": 16,
+          "slot": "0",
+          "type": "t_uint32"
+        },
+        {
+          "label": "feesEnabled",
+          "offset": 20,
+          "slot": "0",
+          "type": "t_bool"
+        }
+      ]
+    },
+    "t_struct(Order)_storage": {
+      "encoding": "inplace",
+      "label": "struct ExampleStorage.Order",
+      "numberOfBytes": "128",
+      "members": [
+        {
+          "label": "maker",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_address"
+        },
+        {
+          "label": "expiry",
+          "offset": 20,
+          "slot": "0",
+          "type": "t_uint64"
+        },
+        {
+          "label": "side",
+          "offset": 28,
+          "slot": "0",
+          "type": "t_enum(Side)"
+        },
+        {
+          "label": "filled",
+          "offset": 29,
+          "slot": "0",
+          "type": "t_bool"
+        },
+        {
+          "label": "amount",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_uint256"
+        },
+        {
+          "label": "price",
+          "offset": 0,
+          "slot": "2",
+          "type": "t_uint128"
+        },
+        {
+          "label": "filledAmount",
+          "offset": 16,
+          "slot": "2",
+          "type": "t_uint128"
+        },
+        {
+          "label": "orderHash",
+          "offset": 0,
+          "slot": "3",
+          "type": "t_bytes32"
+        }
+      ]
+    },
+    "t_struct(UserProfile)_storage": {
+      "encoding": "inplace",
+      "label": "struct ExampleStorage.UserProfile",
+      "numberOfBytes": "128",
+      "members": [
+        {
+          "label": "user",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_address"
+        },
+        {
+          "label": "nonce",
+          "offset": 20,
+          "slot": "0",
+          "type": "t_uint32"
+        },
+        {
+          "label": "active",
+          "offset": 24,
+          "slot": "0",
+          "type": "t_bool"
+        },
+        {
+          "label": "customFees",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_struct(FeeConfig)_storage"
+        },
+        {
+          "label": "totalVolume",
+          "offset": 0,
+          "slot": "2",
+          "type": "t_uint256"
+        },
+        {
+          "label": "username",
+          "offset": 0,
+          "slot": "3",
+          "type": "t_string_storage"
+        }
+      ]
+    },
+    "t_mapping(t_uint256,t_struct(Order)_storage)": {
+      "encoding": "mapping",
+      "key": "t_uint256",
+      "value": "t_struct(Order)_storage",
+      "label": "mapping(uint256 => struct ExampleStorage.Order)",
+      "numberOfBytes": "32"
+    },
+    "t_mapping(t_address,t_struct(UserProfile)_storage)": {
+      "encoding": "mapping",
+      "key": "t_address",
+      "value": "t_struct(UserProfile)_storage",
+      "label": "mapping(address => struct ExampleStorage.UserProfile)",
+      "numberOfBytes": "32"
+    },
+    "t_array(t_struct(Order)_storage)dyn_storage": {
+      "encoding": "dynamic_array",
+      "base": "t_struct(Order)_storage",
+      "label": "struct ExampleStorage.Order[]",
+      "numberOfBytes": "32"
+    },
+    "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+      "encoding": "mapping",
+      "key": "t_address",
+      "value": "t_mapping(t_address,t_uint256)",
+      "label": "mapping(address => mapping(address => uint256))",
+      "numberOfBytes": "32"
+    },
+    "t_mapping(t_address,t_uint256)": {
+      "encoding": "mapping",
+      "key": "t_address",
+      "value": "t_uint256",
+      "label": "mapping(address => uint256)",
+      "numberOfBytes": "32"
+    },
+    "t_array(t_uint128)4_storage": {
+      "encoding": "inplace",
+      "base": "t_uint128",
+      "label": "uint128[4]",
+      "numberOfBytes": "64"
+    }
+  }
+}

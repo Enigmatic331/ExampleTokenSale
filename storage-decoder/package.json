@@ -1,0 +1,17 @@
+{
+  "name": "solidity-storage-decoder",
+  "version": "1.0.0",
+  "description": "Decode Solidity storage slots into human-readable values using storage layout JSON and ABI",
+  "main": "decode-storage.ts",
+  "scripts": {
+    "example": "npx tsx examples.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "ethers": "^6.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
